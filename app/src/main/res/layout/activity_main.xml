@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:padding="100dp"
+    android:background="#525fae"
+    android:layout_gravity="center">
+
+
+    <!-- Primer Numero TextView -->
+
+    <TextView
+        android:id="@+id/editTextText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:fontFamily="sans-serif-black"
+        android:text="@string/calculadora"
+        android:textAlignment="center"
+        style="@style/FontStyle"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="66dp"
+        tools:layout_editor_absoluteY="4dp" />
+
+    <TextView
+        android:id="@+id/primerNumero"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:fontFamily="sans-serif-medium"
+        android:text="@string/numero1"
+        android:textSize="20sp"
+        style="@style/FontStyle"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <!-- Primer Numero EditText -->
+    <EditText
+        android:id="@+id/Nuno"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:inputType="numberDecimal"
+        app:layout_constraintTop_toBottomOf="@id/primerNumero"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintWidth_percent="0.9"
+        android:background="@drawable/stylo_borde_edittext"/>
+
+    <!-- Segundo Numero TextView -->
+    <TextView
+        android:id="@+id/segundoNumero"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="sans-serif-medium"
+        android:text="@string/numero2"
+        android:textSize="20sp"
+        android:layout_marginTop="30dp"
+        style="@style/FontStyle"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/Nuno" />
+
+    <!-- Segundo Numero EditText -->
+    <EditText
+        android:id="@+id/Ndos"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:inputType="numberDecimal"
+        android:background="@drawable/stylo_borde_edittext"
+        app:layout_constraintTop_toBottomOf="@id/segundoNumero"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintWidth_percent="0.9" />
+
+    <!-- Resultado TextView -->
+    <TextView
+        android:id="@+id/Resultado"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="sans-serif-medium"
+        android:text="@string/resultado"
+        android:textSize="20sp"
+        android:layout_marginTop="30dp"
+        style="@style/FontStyle"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/Ndos" />
+
+    <!-- Resultado EditText -->
+    <EditText
+        android:id="@+id/Result"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:inputType="numberDecimal"
+        android:background="@drawable/stylo_borde_edittext"
+        app:layout_constraintTop_toBottomOf="@id/Resultado"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintWidth_percent="0.9" />
+
+    <!-- Button Group -->
+    <RelativeLayout
+
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:orientation="vertical"
+        android:layout_marginTop="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/Result">
+
+        <!-- Sumar Button -->
+
+        <Button
+            android:id="@+id/sumar"
+            style="@style/ButtonsStyle"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:background="@drawable/stylo_borde_buttons"
+            android:onClick="sumar"
+            android:text="@string/btn_suma" />
+
+        <!-- Restar Button -->
+
+        <Button
+            android:id="@+id/restar"
+            style="@style/ButtonsStyle"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_centerHorizontal="true"
+            android:background="@drawable/stylo_borde_buttons"
+            android:onClick="restar"
+            android:text="@string/btn_resta" />
+
+        <!-- Multiplicar Button -->
+        <Button
+            android:id="@+id/multiplicar"
+            style="@style/ButtonsStyle"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_alignParentEnd="true"
+            android:background="@drawable/stylo_borde_buttons"
+            android:onClick="multiplicar"
+            android:text="@string/btn_multiplicacion" />
+
+        <!-- Dividir Button -->
+        <Button
+            android:id="@+id/dividir"
+            style="@style/ButtonsStyle"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_centerVertical="true"
+            android:background="@drawable/stylo_borde_buttons"
+            android:onClick="dividir"
+            android:text="@string/btn_division" />
+
+        <!-- Reset Button -->
+        <Button
+            android:id="@+id/reset"
+            style="@style/ButtonsStyle"
+            android:layout_width="128dp"
+            android:layout_height="60dp"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:layout_centerHorizontal="true"
+            android:textSize="23sp"
+            android:background="@drawable/stylo_borde_buttons"
+            android:onClick="reset"
+            android:text="@string/btn_resetear" />
+
+
+
+
+
+    </RelativeLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
